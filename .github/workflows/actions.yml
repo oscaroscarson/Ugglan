@@ -6,9 +6,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
       - name: Build doc
       - run: make -C ./doc
-
       - name: Build & run raspi unit tests
       - run: make -C ./raspi -f Makefile_tests
