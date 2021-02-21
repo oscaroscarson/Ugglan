@@ -9,6 +9,6 @@ TOOLS_ROOT_MNT = /tools
 
 build_pkg_and_test:
 	docker build . -t tools
-	docker run -t -d -v $(TOOLS_ROOT):$(TOOLS_ROOT_MNT) \
+	docker run -v $(TOOLS_ROOT):$(TOOLS_ROOT_MNT) \
 			tools \
-			pip install -e . && pytest .
+			python -m pytest

@@ -6,4 +6,4 @@ WORKDIR ${ROOT}
 COPY ./requirements.txt ${ROOT}
 
 RUN pip install --upgrade pip
-RUN pip install -r "requirements.txt"
+RUN pip install -r "requirements.txt" # TODO: Install tools package instead.
