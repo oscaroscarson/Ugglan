@@ -10,5 +10,8 @@ jobs:
       - name: Build doc
         run: make -C ./doc
 
-      - name: Build & run raspi unit tests
+      - name: Build & unit test tools
+        run: make -C ./tools
+
+      - name: Build & unit test raspi
         run: make -C ./raspi -f Makefile_tests
