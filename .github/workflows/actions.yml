@@ -7,6 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - uses: satackey/action-docker-layer-caching@v0.0.11
       - name: Build doc
         run: make -C ./doc
 
