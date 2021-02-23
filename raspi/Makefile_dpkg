@@ -8,7 +8,7 @@ RASPI_ROOT_MOUNTED = /raspi_mount
 .PHONY: build_dpkg_in_docker
 
 build_dpkg_in_docker:
-	docker build -f Dockerfile_raspi . -t raspi
-	docker run -v $(RASPI_ROOT):${RASPI_ROOT_MOUNTED} \
-	           -e ROOT_MOUNTED=${RASPI_ROOT_MOUNTED} \
-			    raspi /raspi/build_dpkg.sh
+	docker buildx build -f Dockerfile_raspi --platform linux/arm . -t raspi
+	docker create -ti --name raspi_dpkg raspi bash
+	docker cp raspi_dpkg:/raspi/ugglan.deb .
+	docker rm -f raspi_dpkg

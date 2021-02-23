@@ -1,4 +1,4 @@
-FROM raspbian/stretch:latest
+FROM debian:stretch
 
 # Install dependencies
 RUN apt-get update && apt-get upgrade -y
@@ -31,3 +31,4 @@ COPY . ${ROOT}
 
 # Make entry shell script executable
 RUN chmod +x ./build_dpkg.sh
+RUN ./build_dpkg.sh

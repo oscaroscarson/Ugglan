@@ -18,3 +18,11 @@ jobs:
 
       - name: Build & unit test raspi
         run: make -C ./raspi -f Makefile_tests
+
+      - name: Build raspi deb pkg
+        run: make -C ./raspi -f Makefile_dpkg
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: ugglan-deb-pkg
+          path: raspi/ugglan.deb

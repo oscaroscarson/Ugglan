@@ -24,4 +24,4 @@ cp -r ${SKEL_SRC_PATH}/. ${SKEL_DST_PATH}
 cp -r ${EXEC_SRC_PATH} ${EXEC_DST_PATH}
 
 dpkg-deb --build ${SKEL_DST_PATH}
-cp ${DPKG_FILE} ${ROOT_MOUNTED}
+#cp ${DPKG_FILE} ${ROOT_MOUNTED}
