@@ -10,7 +10,6 @@ RASPI_ROOT_MOUNTED = /raspi_mount
 build_dpkg_in_docker:
 	docker build -f Dockerfile_raspi . -t raspi
 	#docker buildx build -f Dockerfile_raspi --no-cache --network=host . -t raspi
-	#docker run raspi cat /etc/resolv.conf
-	#docker create -ti --name raspi_dpkg raspi bash
-	#docker cp raspi_dpkg:/raspi/ugglan.deb .
-	#docker rm -f raspi_dpkg
+	docker create -ti --name raspi_dpkg raspi bash
+	docker cp raspi_dpkg:/raspi/ugglan.deb .
+	docker rm -f raspi_dpkg
