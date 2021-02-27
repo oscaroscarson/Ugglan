@@ -7,7 +7,7 @@
 TARGET := $(TARGET_NAME)
 SRCEXT := cpp
 
-CXX = arm-linux-gnueabihf-g++-9.1
+CXX = g++-9.1
 CXXFLAGS += -Wall -Wno-psabi -std=c++17 -pthread
 LDFLAGS += -lz
 
