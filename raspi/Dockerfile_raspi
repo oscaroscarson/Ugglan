@@ -1,6 +1,6 @@
 FROM debian:stretch
 
-RUN raspi cat /etc/resolv.conf
+RUN cat /etc/resolv.conf
 
 # Install dependencies
 #RUN apt-get update && apt-get upgrade -y
